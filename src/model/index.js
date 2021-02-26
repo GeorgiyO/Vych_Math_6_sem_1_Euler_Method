@@ -6,7 +6,7 @@ export {props, updateData};
 const props = {
     inputPanel: {
         state: {
-            mode: "firstOrder",
+            mode: "secondOrder",
             autoUpdate: true,
             firstOrder: {
                 foo: "y + Math.exp(x) / x | x,y",
@@ -23,7 +23,7 @@ const props = {
                 y0: "2",
                 dy0: "3",
                 h: "0.1",
-                iterations: "10"
+                iterations: "10",
             }
         },
         updateState: function () {
@@ -107,12 +107,7 @@ function updateDataSO() {
     foo = funcs.foo;
     realFoo = funcs.realFoo;
 
-    updateDataAndGraphState(eulerMethodSecondOrder(x0, y0, dy0, h, iterations, foo).map(p => {
-        return {
-            x: p.t,
-            y: p.y
-        }
-    }), realFoo);
+    updateDataAndGraphState(eulerMethodSecondOrder(x0, y0, dy0, h, iterations, foo), realFoo);
 }
 
 function checkFuncs(functions) {
