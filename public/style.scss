@@ -12,11 +12,23 @@ sub {
   font-size: 0.5rem;
 }
 
+@media screen and (max-width: 1400px) {
+  .Root {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media not screen and (max-width: 1400px) {
+  .Root {
+    flex-direction: row;
+    align-items: stretch;
+  }
+}
+
 .Root {
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: stretch;
 
   .InputPanel {
     width: 300px;
@@ -38,13 +50,14 @@ sub {
   }
 
   .Data {
+    max-width: 400px;
     td {
       padding: 4px 10px;
     }
   }
 
   .Graph {
-    height: 800px;
+    height: 400px;
     width: 800px;
   }
 }

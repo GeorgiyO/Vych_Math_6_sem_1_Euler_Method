@@ -19,7 +19,7 @@ let eulerMethod = (x0, y0, h, iterations, foo) => {
         values.push({
             x: prev.x + h,
             y: prev.y + h * foo(prev.x, prev.y)
-        })
+        });
     }
     return values;
 }
